@@ -58,7 +58,7 @@ export const RegistrComponent = () => {
                             {!imageUrl
                                 ? (<><input type="file" {...register("avatarUrl")} className="w-[130%] h-[160%] bg-gray-400  mx-auto absolute top-[-35%] right-0" onChange={handleChangeFile} />
                                 </>)
-                                : (<img className={'w-full h-full'} src={`http://localhost:4444${imageUrl}`} alt="imageAvatar"></img>)
+                                : (<img className={'w-full h-full'} src={`${process.env.REACT_APP_API_URL}${imageUrl}`} alt="imageAvatar"></img>)
                             }
                         </div>
                         {!imageUrl && <div className="text-black font-bold text-sm flex justify-center">Click on the circle to add Avatar</div>}

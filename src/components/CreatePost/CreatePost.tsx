@@ -119,7 +119,7 @@ export const CreatePost = () => {
                         </button>
                     )}
                     {imageUrl && (
-                        <img className={'w-2/3 md:w-full h-[400px] md:h-[250px]'} src={`http://localhost:4444${imageUrl}`} alt="imageURI" />
+                        <img className={'w-2/3 md:w-full h-[400px] md:h-[250px]'} src={`${process.env.REACT_APP_API_URL}${imageUrl}`} alt="imageURI" />
                     )}
                     <br />
                     <br />

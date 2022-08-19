@@ -18,7 +18,7 @@ export const CommentsComponent = () => {
             <div className="flex flex-col gap-y-3">
                 {resData.map((comment: any, index: any) => (
                     <div key={index} className="flex gap-3 items-center justify-start relative border-b-[1px] border-[#dadadaa7]">
-                        <div className="w-[45px] h-[45px] relative"><img className="absolute t-0 l-0 w-full h-full rounded-[50%]" src={comment.user.avatarUrl ? `http://localhost:4444${comment.user.avatarUrl}` : avatar} alt="" /></div>
+                        <div className="w-[45px] h-[45px] relative"><img className="absolute t-0 l-0 w-full h-full rounded-[50%]" src={comment.user.avatarUrl ? `${process.env.REACT_APP_API_URL}${comment.user.avatarUrl}` : avatar} alt="" /></div>
                         <div className="flex flex-col  ">
                             <div className="text-md">{comment.user.fullName}</div>
                             <div className="text-md">{String(new Date(comment.updatedAt)).slice(0, 10)}</div>

@@ -41,11 +41,11 @@ export const PostComponent = ({
     return (
         <>
             <div className={`${style.postBlock}`}>
-                {imageUrl && <div className={`${style.imageBlock}`}><img className="w-full h-full rounded-t-[5px] object-fill" src={`http://localhost:4444${imageUrl}`} alt="" /></div>}
+                {imageUrl && <div className={`${style.imageBlock}`}><img className="w-full h-full rounded-t-[5px] object-fill" src={`${process.env.REACT_APP_API_URL}${imageUrl}`} alt="" /></div>}
                 <div className={`${style.contentBlock}`}>
                     <div className='px-14 py-1 flex flex-col justify-center w-full h-full items-start gap-y-3'>
                         <div className='flex gap-x-2'>
-                            <div className='w-10 h-10  ml-[-45px]'><img className='w-full h-full rounded-full ' src={user.avatarUrl ? `http://localhost:4444${user.avatarUrl}` : avatar} alt="" /></div>
+                            <div className='w-10 h-10  ml-[-45px]'><img className='w-full h-full rounded-full ' src={user.avatarUrl ? `${process.env.REACT_APP_API_URL}${user.avatarUrl}` : avatar} alt="" /></div>
                             <div className='flex flex-col'>
                                 <div className='font-md text-black font-bold'>{user.fullName}</div>
                                 <div className='text-sm text-gray-400'>{createdAt}</div>

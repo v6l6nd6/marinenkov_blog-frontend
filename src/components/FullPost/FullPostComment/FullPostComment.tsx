@@ -51,7 +51,7 @@ export const FullPostComment:React.FC<fullPostCommentType> = ({ post, id }) => {
                     {data.map((comment: commentType) => (
 
                         comment?.postId === id ? <div key={comment._id} className="flex gap-3 items-center justify-start relative border-b-[1px] border-[#dadadaa7]">
-                            <div className="w-[45px] h-[45px] relative"><img className="absolute t-0 l-0 w-full h-full rounded-[50%]" src={`http://localhost:4444${comment.user.avatarUrl}`} alt="" /></div>
+                            <div className="w-[45px] h-[45px] relative"><img className="absolute t-0 l-0 w-full h-full rounded-[50%]" src={`${process.env.REACT_APP_API_URL}${comment.user.avatarUrl}`} alt="" /></div>
                             <div className="flex flex-col  ">
                                 <div className="text-md">{comment.user.fullName}</div>
                                 <div className="text-md">{String(new Date(comment.updatedAt)).slice(0, 21)}</div>
@@ -63,7 +63,7 @@ export const FullPostComment:React.FC<fullPostCommentType> = ({ post, id }) => {
 
                     ))}
                     {loginStatus === 'loaded' && (<form className="w-full flex gap-1" onSubmit={handleSubmit(onSubmit)}>
-                        <div className="w-[45px] h-[45px] relative"><img className="absolute t-0 l-0 w-full h-full rounded-[50%]" src={post.user.avatarUrl ? `http://localhost:4444${post.user.avatarUrl}` : avatar} alt="" /></div>
+                        <div className="w-[45px] h-[45px] relative"><img className="absolute t-0 l-0 w-full h-full rounded-[50%]" src={post.user.avatarUrl ? `${process.env.REACT_APP_API_URL}${post.user.avatarUrl}` : avatar} alt="" /></div>
                         <div className="flex flex-col w-full gap-2">
                             <input className="w-full h-12 border-solid border-[0.7px] border-gray-300" {...register("comment")} placeholder='write comment...' />
                             <input className="w-44 h-12 bg-blue-600 text-white" type="submit" value={'Send'} /></div>
