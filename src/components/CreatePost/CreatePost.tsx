@@ -65,7 +65,7 @@ export const CreatePost = () => {
 
             }
             catch(err){
-                alert('Error on loading data of post')
+                alert('Error on loading dat. of post')
             }
           }
          
